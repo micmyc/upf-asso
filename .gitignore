@@ -1,0 +1,62 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+*.log
+
+# --- Virtualenv ---
+venv/
+env/
+ENV/
+.venv/
+
+# --- Django / Wagtail ---
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+static_root/
+wagtail-cache/
+
+# --- Environment variables ---
+.env
+.env.*
+*.env
+
+# --- IDE / Editors ---
+.vscode/
+.idea/
+*.code-workspace
+
+# --- OS-specific ---
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# --- Docker ---
+docker-compose.override.yml
+.dockerignore
+
+# --- Node / Frontend (si un jour tu ajoutes du JS) ---
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# --- Backup / temp ---
+*.bak
+*.tmp
+*.swp
+*.swo
