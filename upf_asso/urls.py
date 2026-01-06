@@ -8,14 +8,11 @@ from wagtail.documents import urls as wagtaildocs_urls
 
 from search import views as search_views
 
-from wagtailnews.urls import urlpatterns as wagtailnews_urls
-
 urlpatterns = [
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
-    path('news/', include(wagtailnews_urls)),
 ]
 
 

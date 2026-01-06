@@ -1,7 +1,7 @@
 from django.db import models
 from wagtail.models import Page
 from wagtail.fields import RichTextField
-from wagtailnews.models import NewsIndexMixin, AbstractNewsItem
+
 
 
 class NewsIndex(NewsIndexMixin, Page):
