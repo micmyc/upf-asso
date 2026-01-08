@@ -1,1 +1,1 @@
-from .adhesion_page import AdhesionPage
+# Ne rien importer ici
