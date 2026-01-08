@@ -1,0 +1,1 @@
+from .adhesion_page import AdhesionPage
