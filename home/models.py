@@ -2,6 +2,7 @@ from django.db import models
 from wagtail.models import Page
 from wagtail.fields import RichTextField
 from wagtail.admin.panels import FieldPanel
+from upf_asso.pages.adhesion_page import AdhesionPage
 
 
 class HomePage(Page):
@@ -27,3 +28,6 @@ class AssociationPage(Page):
     ]
 
     template = "home/association_page.html"
+
+    def get_adhesion_page(self):
+        return self.get_children().type(AdhesionPage).first()

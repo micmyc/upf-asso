@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-{% block body_class %}association-page{% endblock %}
 {% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}association-page{% endblock %}
 
 <style>
 .association-raison-etre .rich-text {
@@ -12,6 +13,20 @@
     margin-left: auto !important;
     margin-right: auto !important;
     width: 100% !important;
+}
+
+.btn-adhesion {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 18px;
+}
+.btn-adhesion:hover {
+    background-color: #0056b3;
 }
 </style>
 
@@ -34,6 +49,13 @@
     <div class="association-raison-etre" style="max-width: 700px; margin: 0 auto;">
         {{ page.raison_etre|richtext }}
     </div>
+
+    {# --- BOUTON D’ADHÉSION --- #}
+    {% if page.get_adhesion_page %}
+        <a href="{% pageurl page.get_adhesion_page %}" class="btn-adhesion">
+            Adhérer
+        </a>
+    {% endif %}
 
 </div>
 {% endblock %}

@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'upf_asso',
 ]
 
 MIDDLEWARE = [
@@ -193,3 +194,12 @@ WAGTAILADMIN_BASE_URL = "http://example.com"
 # if untrusted users are allowed to upload files -
 # see https://docs.wagtail.org/en/stable/advanced_topics/deploying.html#user-uploaded-files
 WAGTAILDOCS_EXTENSIONS = ['csv', 'docx', 'key', 'odt', 'pdf', 'pptx', 'rtf', 'txt', 'xlsx', 'zip']
+
+# Email configuration (production)
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"  # ou ton fournisseur
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "michel.myc@gmail.com"
+EMAIL_HOST_PASSWORD = "evru qifz hpvl xgeb"
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
