@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'upf_asso',
+    "upf_asso.pages",     
 ]
 
 MIDDLEWARE = [
