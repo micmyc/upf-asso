@@ -25,9 +25,6 @@ wagtail-cache/
 # Exclure le fichier parasite à la racine
 models.py
 
-# Si l'ancienne app n'est plus utilisée, l'exclure entièrement
-upf_asso/
-
 # --- Environment variables ---
 .env
 .env.*

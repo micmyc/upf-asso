@@ -40,9 +40,12 @@ class AssociationPage(Page):
 
 
 class AdhesionForm(forms.Form):
+    prenom = forms.CharField(label="Prénom", max_length=200)
     nom = forms.CharField(label="Nom", max_length=200)
     email = forms.EmailField(label="Email")
+    telephone = forms.CharField(label="Téléphone", max_length=20, required=False)
     message = forms.CharField(label="Message", widget=forms.Textarea)
+
 
 
 class AdhesionPage(Page):
@@ -68,18 +71,27 @@ class AdhesionPage(Page):
         if request.method == "POST":
             form = AdhesionForm(request.POST)
             if form.is_valid():
+                prenom = form.cleaned_data["prenom"]
                 nom = form.cleaned_data["nom"]
                 email = form.cleaned_data["email"]
+                telephone = form.cleaned_data["telephone"]
                 message = form.cleaned_data["message"]
-
+                
                 to = [a.strip() for a in self.destinataires.split(",")]
 
                 send_mail(
-                    subject=f"Nouvelle adhésion : {nom}",
-                    message=f"Nom : {nom}\nEmail : {email}\nMessage :\n{message}",
+                    subject=f"Nouvelle adhésion : {prenom} {nom}",
+                    message=(
+                        f"Prénom : {prenom}\n"
+                        f"Nom : {nom}\n"
+                        f"Email : {email}\n"
+                        f"Téléphone : {telephone}\n"
+                        f"Message :\n{message}"
+                    ),
                     from_email=settings.DEFAULT_FROM_EMAIL,
                     recipient_list=to,
                 )
+
 
                 return render(request, "adhesion/success.html", {
                     "page": self,
