@@ -2,7 +2,7 @@ from django.db import models
 from wagtail.models import Page
 from wagtail.fields import RichTextField
 from wagtail.admin.panels import FieldPanel
-from upf_asso.pages.adhesion_page import AdhesionPage
+
 
 
 class HomePage(Page):

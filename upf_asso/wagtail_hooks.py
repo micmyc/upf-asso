@@ -1,1 +1,0 @@
-from upf_asso.pages.adhesion_page import AdhesionPage
