@@ -22,6 +22,12 @@ staticfiles/
 static_root/
 wagtail-cache/
 
+# Exclure le fichier parasite à la racine
+models.py
+
+# Si l'ancienne app n'est plus utilisée, l'exclure entièrement
+upf_asso/
+
 # --- Environment variables ---
 .env
 .env.*
@@ -49,7 +55,7 @@ Desktop.ini
 docker-compose.override.yml
 .dockerignore
 
-# --- Node / Frontend (si un jour tu ajoutes du JS) ---
+# --- Node / Frontend ---
 node_modules/
 npm-debug.log
 yarn-debug.log
