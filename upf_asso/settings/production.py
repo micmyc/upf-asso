@@ -1,6 +1,20 @@
-SECRET_KEY = 's3cr3t-k3y-tr3s-longue-64-chars-changez-moi-maintenant-django-upf-asso-2026!'
-DEBUG = True
 from .base import *
+
+DEBUG = False
+
+SECRET_KEY = 's3cr3t-k3y-tr3s-longue-64-chars-changez-moi-maintenant-django-upf-asso-2026!'
+
+# Base de données PostgreSQL
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "upf_asso",
+        "USER": "upf_asso",
+        "PASSWORD": "TON_MOT_DE_PASSE_POSTGRES",
+        "HOST": "localhost",
+        "PORT": "5432",
+    }
+}
 
 TEMPLATES = [
     {
@@ -20,11 +34,6 @@ TEMPLATES = [
     },
 ]
 
-
-# ManifestStaticFilesStorage is recommended in production, to prevent
-# outdated JavaScript / CSS assets being served from cache
-# (e.g. after a Wagtail upgrade).
-# See https://docs.djangoproject.com/en/6.0/ref/contrib/staticfiles/#manifeststaticfilesstorage
 STORAGES["staticfiles"]["BACKEND"] = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
 
 # HTTPS Production
