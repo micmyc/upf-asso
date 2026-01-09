@@ -51,11 +51,13 @@
     </div>
 
     {# --- BOUTON D’ADHÉSION --- #}
-    {% if page.get_adhesion_page %}
-        <a href="{% pageurl page.get_adhesion_page %}" class="btn-adhesion">
-            Adhérer
-        </a>
-    {% endif %}
+    {% with adhesion=page.get_adhesion_page %}
+        {% if adhesion %}
+            <a href="{% pageurl adhesion %}" class="btn-adhesion">
+                Adhérer
+            </a>
+        {% endif %}
+    {% endwith %}
 
 </div>
 {% endblock %}
