@@ -95,6 +95,7 @@ class AdhesionPage(Page):
 
                 return render(request, "adhesion/success.html", {
                     "page": self,
+                    "prenom": prenom,
                     "nom": nom,
                 })
 
